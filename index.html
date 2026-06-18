@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}الرئيسية - لوحة الإعلانات{% endblock %}
+
+{% block content %}
+    <h1>الإعلانات</h1>
+    {% if announcements|length == 0 %}
+        <p class="empty">لا توجد إعلانات حالياً.</p>
+    {% else %}
+        <div class="cards">
+            {% for a in announcements %}
+                <div class="card">
+                    <h2>{{ a.title }}</h2>
+                    <p>{{ a.content }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}

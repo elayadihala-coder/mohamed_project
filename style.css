@@ -1,0 +1,152 @@
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+
+.navbar {
+    background: #2c3e50;
+    color: white;
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .brand {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navbar nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    margin-right: 16px;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+.navbar nav a:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 16px;
+}
+
+h1 { color: #2c3e50; }
+
+.flash {
+    padding: 10px 16px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+}
+.flash.success { background: #d4edda; color: #155724; }
+.flash.error { background: #f8d7da; color: #721c24; }
+
+.cards { display: flex; flex-direction: column; gap: 14px; }
+
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 16px 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+.card h2 { margin: 0 0 8px 0; font-size: 18px; color: #2c3e50; }
+.card p { margin: 0; color: #555; }
+
+.form-box {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    max-width: 420px;
+    margin-bottom: 24px;
+}
+
+.form-box label {
+    display: block;
+    margin: 10px 0 4px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.form-box input,
+.form-box textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.form-box button {
+    margin-top: 14px;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.form-box button:hover { background: #1a252f; }
+
+.hint { font-size: 13px; color: #888; margin-top: 10px; }
+
+.admin-card {
+    background: white;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 14px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.edit-form {
+    flex: 1;
+    min-width: 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.edit-form input,
+.edit-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.actions { margin-top: 4px; }
+
+button.save {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button.danger {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    height: fit-content;
+}
+
+.empty { color: #888; }

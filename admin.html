@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}لوحة التحكم{% endblock %}
+
+{% block content %}
+    <h1>لوحة تحكم الأدمن</h1>
+
+    <div class="form-box">
+        <h2>➕ إضافة إعلان جديد</h2>
+        <form method="POST">
+            <input type="hidden" name="action" value="add">
+            <label>العنوان</label>
+            <input type="text" name="title" required>
+            <label>المحتوى</label>
+            <textarea name="content" rows="3" required></textarea>
+            <button type="submit">إضافة</button>
+        </form>
+    </div>
+
+    <h2>📋 الإعلانات الحالية</h2>
+    {% if announcements|length == 0 %}
+        <p class="empty">لا توجد إعلانات بعد.</p>
+    {% endif %}
+
+    {% for a in announcements %}
+        <div class="admin-card">
+            <form method="POST" class="edit-form">
+                <input type="hidden" name="action" value="edit">
+                <input type="hidden" name="id" value="{{ a.id }}">
+                <input type="text" name="title" value="{{ a.title }}" required>
+                <textarea name="content" rows="2" required>{{ a.content }}</textarea>
+                <div class="actions">
+                    <button type="submit" class="save">حفظ التعديل</button>
+                </div>
+            </form>
+            <form method="POST" class="delete-form"
+                  onsubmit="return confirm('هل أنت متأكد من حذف هذا الإعلان؟');">
+                <input type="hidden" name="action" value="delete">
+                <input type="hidden" name="id" value="{{ a.id }}">
+                <button type="submit" class="danger">حذف</button>
+            </form>
+        </div>
+    {% endfor %}
+{% endblock %}

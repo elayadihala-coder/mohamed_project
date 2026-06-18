@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}تسجيل الدخول{% endblock %}
+
+{% block content %}
+    <div class="form-box">
+        <h1>تسجيل دخول الأدمن</h1>
+        <form method="POST">
+            <label>اسم المستخدم</label>
+            <input type="text" name="username" required autofocus>
+
+            <label>كلمة المرور</label>
+            <input type="password" name="password" required>
+
+            <button type="submit">دخول</button>
+        </form>
+        <p class="hint">تجريبياً: admin / admin123</p>
+    </div>
+{% endblock %}
